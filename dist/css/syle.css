@@ -32,22 +32,24 @@ body {
 
 .navbar {
   position: fixed;
-  bottom: 0;
+  right: 0;
   left: 0;
-  top: 0;
+  bottom: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 1000;
   align-items: flex-end;
   /* for bottom navbar
   bottom: 0;
   left: 0;
   top: 0;
+      flex-direction: column;
+
   */
 }
 .navbar a {
   padding: 2rem 2rem 1rem 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: #140800;
   flex: 1;
   color: #faf4ea;
@@ -63,9 +65,6 @@ body {
 .navbar a i {
   color: #28DB14;
   padding-right: 0.5rem;
-}
-.navbar a span {
-  display: none;
 }
 .navbar a:hover {
   background: #28DB14;
@@ -89,7 +88,7 @@ body {
 .home .image img {
   height: 48rem;
   width: 45rem;
-  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  border-radius: 32% 68% 83% 17%/36% 30% 70% 64%;
 }
 .home .content {
   flex: 1 1 42rem;
@@ -242,9 +241,11 @@ section {
 .education .box-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 .education .box-container .box {
-  flex: 1 1 40rem;
+  flex-basis: 17rem;
   margin-left: 2rem;
   padding-top: 0;
   padding-bottom: 0;
@@ -286,6 +287,124 @@ section {
   line-height: 2;
 }
 
+.accomplishments {
+  text-align: center;
+}
+.accomplishments .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.accomplishments .box-container .box {
+  height: 30rem;
+  overflow: hidden;
+  position: relative;
+}
+.accomplishments .box-container .box:hover .content {
+  transform: translateY(0%);
+}
+.accomplishments .box-container .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.accomplishments .box-container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #140800;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transform: translateY(-100%);
+  transition: 0.2s linear;
+}
+.accomplishments .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: #faf4ea;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.accomplishments .box-container .box .content p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #C6ECBF;
+}
+.accomplishments .box-container .box .content a {
+  font-size: 2rem;
+  color: #28DB14;
+}
+.accomplishments .box-container .box .content a:hover {
+  color: #faf4ea;
+}
+
+.projects .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
+}
+.projects .box-container .box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: #140800;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+.projects .box-container .box:hover .image img {
+  transform: scale(1.2);
+}
+.projects .box-container .box .image {
+  height: 25rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.projects .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s linear;
+}
+.projects .box-container .box .content .icons {
+  position: relative;
+  top: -1rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: inline-block;
+  background: #0A0400;
+}
+.projects .box-container .box .content .icons a {
+  font-size: 1.4rem;
+  margin: 0 1rem;
+  color: #faf4ea;
+}
+.projects .box-container .box .content .icons a:hover {
+  color: #28DB14;
+}
+.projects .box-container .box .content .icons a i {
+  padding-right: 0.5rem;
+  color: #28DB14;
+}
+.projects .box-container .box .content h3 {
+  font-size: 2rem;
+  color: #faf4ea;
+  font-weight: normal;
+}
+.projects .box-container .box .content p {
+  font-size: 1.5rem;
+  color: #C6ECBF;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -297,6 +416,9 @@ section {
 @media (max-width: 768px) {
   .heading {
     font-size: 12vw;
+  }
+  section {
+    padding: 3rem 2rem;
   }
   .navbar a i {
     padding: 0;

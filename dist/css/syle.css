@@ -74,6 +74,17 @@ body {
   color: #faf4ea;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+footer p {
+  color: #faf4ea;
+  font-size: 0.3rem;
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -390,8 +401,8 @@ section {
   color: #28DB14;
 }
 .projects .box-container .box .content .icons a i {
-  padding-right: 0.5rem;
   color: #28DB14;
+  padding-right: 0.5rem;
 }
 .projects .box-container .box .content h3 {
   font-size: 2rem;

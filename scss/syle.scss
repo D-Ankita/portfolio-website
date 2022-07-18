@@ -107,7 +107,21 @@ body {
     }
 }
 
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+    p{
+        color: $white;
+        font-size: 0.3rem;
+        // padding-bottom: .5rem;
+        // justify-content: center;
+        
 
+    }
+}
 .home {
     display: flex;
     align-items: center;
@@ -478,8 +492,9 @@ section {
                         }
 
                         i {
-                            padding-right: .5rem;
                             color: $neon;
+                            padding-right: .5rem;
+                            
                         }
                     }
                 }
